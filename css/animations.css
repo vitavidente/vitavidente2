@@ -1,0 +1,324 @@
+
+
+/* Pulse */
+@keyframes pulse {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+}
+
+[hover-animation='pulse']:hover {animation: pulse 2s linear infinite;}
+
+
+
+
+
+
+
+
+/* Wobble Vertical */
+@keyframes wobble-vertical {
+  16.65% {
+    transform: translateY(8px);
+  }
+  33.3% {
+    transform: translateY(-6px);
+  }
+  49.95% {
+    transform: translateY(4px);
+  }
+  66.6% {
+    transform: translateY(-2px);
+  }
+  83.25% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+[hover-animation='wobble-vertical']:hover {
+  animation-name: wobble-vertical;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+/* Wobble Horizontal */
+@keyframes wobble-horizontal {
+  16.65% {
+    transform: translateX(8px);
+  }
+  33.3% {
+    transform: translateX(-6px);
+  }
+  49.95% {
+    transform: translateX(4px);
+  }
+  66.6% {
+    transform: translateX(-2px);
+  }
+  83.25% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+.button[hover-animation='center-1']{position: relative; z-index: 9;  transition: .3s;}
+.button[hover-animation='center-1']:after {
+    content:''; width: 0%; height: 100%; position: absolute; top: 0;bottom: 0;left: 0;right: 0; background: currentcolor;
+    opacity: .3; margin: auto;
+    transition: .3s;
+    filter: invert(1) grayscale(1);
+    z-index:-1;
+   border-radius: inherit;
+}
+
+.button[hover-animation='center-1']:hover:after {
+   width: 100%;
+
+}
+.button[hover-animation='center-1']:hover {
+transform: scale(1.05)
+
+}
+
+
+
+
+
+
+.button[hover-animation='left-1'] .buttonhover:after {
+    content:''; width: 0%; height: 100%; position: absolute; top: 0;bottom: 0;left: 0;right: 0; background: currentcolor;
+    opacity: .5; 
+    transition: .3s;
+    filter: invert(1) grayscale(1);
+    border-radius: inherit;
+
+}
+
+.button[hover-animation='left-1']:hover .buttonhover:after {
+   width: 100%;
+
+}
+
+
+
+
+
+[hover-animation='wobble-horizontal']:hover {
+  animation-name: wobble-horizontal;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+
+
+
+
+
+
+
+
+.button[hover-animation='circle-center'] .buttonhover:after {
+    content:''; width: 0; height: 0; position: absolute; top: 0; bottom: 0; left: 0;right: 0; background: currentcolor;
+    opacity: .5; 
+    transition: .3s;
+    filter: invert(1) grayscale(1);
+  
+    border-radius:900px ;
+    margin: auto;
+
+}
+
+.button[hover-animation='circle-center']:hover .buttonhover:after{height: 100%; width: 100%; 
+width: 800px; height: 800px;
+}
+
+
+
+
+.button[hover-animation='curve-top'] .buttonhover:after {
+    content:''; width: 200%; height: 1000px; position: absolute; top: -1100px; bottom: 0; left: -100%;right: -100%; background: currentcolor;
+    opacity: .5; 
+    transition: .5s;
+    filter: invert(1) grayscale(1);
+
+    border-radius:100% ;
+    margin: auto;
+    
+}
+
+.button[hover-animation='curve-top']:hover .buttonhover:after{ top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button[hover-animation='darken'], .button[hover-animation='zoom'], .button[hover-animation='float']{transition: .5s}
+.button[hover-animation='darken']:hover{box-shadow: inset 0 0 0 300px rgba(0, 0, 0, 0.2)}
+.button[hover-animation='zoom']:hover{transform: scale(1.05); animation: zoom .5s ease-in-out ; }
+
+.button.ui-sortable-helper{transition: 0s !important}
+
+
+
+
+
+
+
+
+[all-hover-animation='zoom']{ transform: scale(1); transition: .5s; }
+[all-hover-animation='zoom']:hover{animation: zoom .5s ease-in-out ; transform: scale(1.05)}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1)
+    }
+
+  
+    100%{
+        transform: scale(1.05)
+    }
+}
+
+
+[all-hover-animation='pulse']:hover{ animation: pulse 2s linear infinite;}
+[all-hover-animation='wobble-vertical']:hover{ animation: wobble-vertical 1s ease-in-out infinite; }
+[all-hover-animation='wobble-horizontal']:hover{ animation: wobble-horizontal 1s ease-in-out infinite; }
+[all-hover-animation='balance']:hover{ animation: balance 2s ease-in-out infinite;     }
+
+
+
+/*
+body:not(.page-edite) [all-hover-animation='c-reveal'],body:not(.page-edite) [all-hover-animation='c-reveal-b']{position: relative}
+body:not(.page-edite) [all-hover-animation='c-reveal'] >*,body:not(.page-edite) [all-hover-animation='c-reveal-b'] >*{ opacity: .001 !important ;transition: 1s !important ; z-index: 9 ;  transform: translateY(-20px)}
+
+
+body:not(.page-edite) [all-hover-animation='c-reveal-b'] >*{ transform: translateY(20px)}
+
+body:not(.page-edite) [all-hover-animation='c-reveal']:hover >*, body:not(.page-edite) [all-hover-animation='c-reveal-b']:hover >*{ opacity: 1 !important ;  transform: translateY(.001px)   }
+
+body:not(.page-edite) [all-hover-animation='c-reveal']:before, body:not(.page-edite) [all-hover-animation='c-reveal-b']:before{content: ''; position: absolute; margin: auto;background: #000; top: 0;bottom: 0;left: 0;right: 0; background-image: inherit;background-attachment: inherit; background-size: inherit; background-position: inherit;transition: .5s; z-index: 0} 
+
+
+ body:not(.page-edite) [all-hover-animation='c-reveal']:hover ,body:not(.page-edite) [all-hover-animation='c-reveal-b']:hover { overflow: hidden}
+ body:not(.page-edite) [all-hover-animation='c-reveal']:hover:before,   body:not(.page-edite) [all-hover-animation='c-reveal-b']:hover:before{position: absolute; top: -5%; bottom: -5%;left: -5%;right: -5%;}
+
+
+.page-edite [all-hover-animation='c-reveal'] >*, .page-edite [all-hover-animation='c-reveal-b'] >*{ opacity: .2 !important ; }
+.page-edite [all-hover-animation='c-reveal']:has(.active)  > *, .page-edite [all-hover-animation='c-reveal-b']:has(.active) > *, .page-edite [all-hover-animation='c-reveal'].active > *,.page-edite [all-hover-animation='c-reveal-b'].active > *{ opacity: 1 !important ; }
+*/
+
+ 
+
+
+body:not(.page-edite) [all-hover-animation='bg-zoom']{position: relative; overflow: hidden}
+body:not(.page-edite) [all-hover-animation='bg-zoom']:before{content: ''; position: absolute; margin: auto;background: #000; top: 0;bottom: 0;left: 0;right: 0; background-image: inherit;background-attachment: inherit; background-size: inherit; background-position: inherit;transition: .5s; z-index: 0; transition: .5s} 
+body:not(.page-edite) [all-hover-animation='bg-zoom']:hover:before {position: absolute; top: -5%; bottom: -5%;left: -5%;right: -5%}
+
+body:not(.page-edite) [all-hover-animation='bg-zoom'] > *{z-index: 9 !important; position: relative}
+
+
+
+
+
+
+[non-hover-animation='pulse']:not(:hover){ animation: pulse 2s linear infinite;}
+[non-hover-animation='wobble-vertical']:not(:hover){ animation: wobble-vertical 1s ease-in-out infinite; }
+[non-hover-animation='wobble-horizontal']:not(:hover){ animation: wobble-horizontal 1s ease-in-out infinite; }
+[non-hover-animation='balance']:not(:hover){ animation: balance 2s ease-in-out infinite;     }
+
+
+
+@keyframes balance {
+    0% {
+        transform: rotate(0)
+    }
+
+    25% {
+        transform: rotate(0)
+    }
+
+    50% {
+        transform: rotate(2deg)
+    }
+
+    75% {
+        transform: rotate(-2deg)
+    }
+
+    to {
+        transform: rotate(0)
+    }
+}
+
+
+
+/*
+
+==========================
+Father hover
+==========================
+*/
+
+body:not(.page-edite) :is([type=subbloco], [type=carousel-card])  :is([father-hover-animation='showtop'], [father-hover-animation='showbottom'], [father-hover-animation='showleft'], [father-hover-animation='showright'], [father-hover-animation='show']     ){transition: .5s ;  max-height:1000px; display: block; animation:openheight 2s linear }
+
+
+
+body:not(.page-edite) :is([type=subbloco], [type=carousel-card]):not(:hover)  [father-hover-animation='show']{ opacity: .001;   margin: 00% !important;
+    display: block;
+    margin-bottom: -1px !important;
+     max-height:.001px !important;
+   
+ animation:closeheight 2s linear ;
+    overflow: hidden;
+ 
+    
+}
+
+
+
+
+@keyframes openheight {
+    0% {
+       max-height:50px; 
+    }
+
+        50%{max-height:200px; }
+    100%{max-height:100px; }
+}
+
+@keyframes closeheight {
+    0% {
+       max-height:1000px;
+        
+    }
+
+        50%{max-height:800px; }
+    100%{max-height:0.1px;    overflow: hidden; }
+}
+
